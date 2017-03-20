@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
   User.find(function(err, users) {
     if (err) return res.send({message: 'An error occurred when finding users'});
-
+    console.log("This is the current user " + req.user)
     res.send(users);
   });
 });
